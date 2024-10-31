@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan Klapetek</title>
+    <link rel="stylesheet" href="{% static 'cv/style.css' %}">
+    <script src="{% static 'cv/script.js' %}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jan Klapetek</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Domů</a></li>
+                    <li><a href="#/about/">O mně</a></li>
+                    <li><a href="#/projects/">Projekty</a></li>
+                    <li><a href="#/hearthstone/">Hearthstone</a></li>
+                    <li><a href="/admin">Admin</a></li>
+                    <li><a href="https://github.com/JanKlapetek?tab=repositories">Repositories GitHub</a></li>
+                    <li><a href="#/contact/">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="education">
+            <h2>Vzdělání</h2>
+            {% for edu in education %}
+                <div>
+                    <h3>{{ edu.school_name }}</h3>
+                    <p>{{ edu.degree }} - {{ edu.field_of_study }}</p>
+                    <p>{{ edu.start_date }} - {{ edu.end_date }}</p>
+                </div>
+            {% endfor %}
+        </section>
+        <section id="experience">
+            <h2>Zkušenosti</h2>
+            {% for exp in experience %}
+                <div>
+                    <h3>{{ exp.job_title }} v {{ exp.company_name }}</h3>
+                    <p>{{ exp.description }}</p>
+                    <p>{{ exp.start_date }} - {{ exp.end_date }}</p>
+                </div>
+            {% endfor %}
+        </section>
+        <section id="skills">
+            <h2>Dovednosti</h2>
+            <ul>
+                {% for skill in skills %}
+                    <li>{{ skill.name }} - Úroveň: {{ skill.proficiency }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <footer>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Jan Klapetek. Všechna práva vyhrazena.</p>
+        </footer>
+    </div>
+</body>
+</html>
