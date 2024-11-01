@@ -29,20 +29,16 @@
             <section id="cards">
                 {% for card in cards %}
                     <div class="card">
-                        <h3>{{ card.name|default:"Unknown Card" }}</h3>
-                        {% if card.img %}
-                            <img src="{{ card.img }}" alt="{{ card.name }}" loading="lazy">
-                        {% else %}
-                            <p>No image available</p>
-                        {% endif %}
-                        <p>{{ card.text|safe|default:"No description available" }}</p>
-                        <p><strong>Rarity:</strong> {{ card.rarity|default:"Unknown" }}</p>
-                        <p><strong>Type:</strong> {{ card.type|default:"Unknown" }}</p>
+                        <h2>{{ card.name|default:"Unknown Card" }}</h2>
+                        <p>{{ card.text|default:"No description available" |safe }}</p>
+                        <p><strong>Rarity:</strong> {{ card.rarity.name|default:"Unknown" }}</p>
+                        <p><strong>Class:</strong> {{ card.class.name|default:"Unknown" }}</p>
+                        <p><strong>Type:</strong> {{ card.type.name|default:"Unknown" }}</p>
+                        <p><strong>Set:</strong> {{ card.cardSet.name|default:"Unknown" }}</p>
                     </div>
-                {% empty %}
-                    <p>No cards available.</p>
                 {% endfor %}
             </section>
+                   
             
             <div class="pagination">
                 <button id="prevPage" {% if page <= 1 %}disabled{% endif %}>Předchozí</button>
