@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan Klapetek</title>
+    <link rel="stylesheet" href="{% static 'cv/style.css' %}">
+    <script src="{% static 'cv/script.js' %}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hearthstone cards</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Domů</a></li>
+                    <li><a href="{% url 'about' %}">O mně</a></li>
+                    <li><a href="#/projects/">Projekty</a></li>
+                    <li><a href="{% url 'hearthstone' %}">Hearthstone</a></li>
+                    <li><a href="/admin">Admin</a></li>
+                    <li><a href="https://github.com/JanKlapetek?tab=repositories">Repositories GitHub</a></li>
+                    <li><a href="#/contact/">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="cards">
+                {% for card in cards %}
+                    <div class="card">
+                        <h3>{{ card.name|default:"Unknown Card" }}</h3>
+                        {% if card.img %}
+                            <img src="{{ card.img }}" alt="{{ card.name }}" loading="lazy">
+                        {% else %}
+                            <p>No image available</p>
+                        {% endif %}
+                        <p>{{ card.text|safe|default:"No description available" }}</p>
+                        <p><strong>Rarity:</strong> {{ card.rarity|default:"Unknown" }}</p>
+                        <p><strong>Type:</strong> {{ card.type|default:"Unknown" }}</p>
+                    </div>
+                {% empty %}
+                    <p>No cards available.</p>
+                {% endfor %}
+            </section>
+            
+            <div class="pagination">
+                <button id="prevPage" {% if page <= 1 %}disabled{% endif %}>Předchozí</button>
+                <button id="nextPage">Další</button>
+            </div>
+        </main>
+        
+        <script src="{% static 'cv/script.js' %}"></script>
+
+        <footer>
+            <p>&copy; <span id="current-year"></span> Jan Klapetek. Všechna práva vyhrazena.</p>
+        </footer>
+    </div>
+</body>
+</html>

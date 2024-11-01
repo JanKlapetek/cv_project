@@ -19,3 +19,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const currentYear = new Date().getFullYear();
     currentYearElement.textContent = currentYear;
 });
+
+// funkce pro přechod na další nebo předchozí stránku Hearthstone
+document.addEventListener("DOMContentLoaded", () => {
+    const prevPageButton = document.getElementById("prevPage");
+    const nextPageButton = document.getElementById("nextPage");
+    let currentPage = new URLSearchParams(window.location.search).get("page") || 1;
+
+    prevPageButton.addEventListener("click", () => {
+        if (currentPage > 1) {
+            window.location.href = `/hearthstone/?page=${parseInt(currentPage) - 1}`;
+        }
+    });
+
+    nextPageButton.addEventListener("click", () => {
+        window.location.href = `/hearthstone/?page=${parseInt(currentPage) + 1}`;
+    });
+});

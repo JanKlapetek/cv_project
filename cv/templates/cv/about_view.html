@@ -11,13 +11,13 @@
 <body>
     <div class="container">
         <header>
-            <h1>Jan Klapetek</h1>
+            <h1>O mně</h1>
             <nav>
                 <ul>
                     <li><a href="/">Domů</a></li>
-                    <li><a href="{% url 'about_view' %}">O mně</a></li>
+                    <li><a href="{% url 'about' %}">O mně</a></li>
                     <li><a href="#/projects/">Projekty</a></li>
-                    <li><a href="#/hearthstone/">Hearthstone</a></li>
+                    <li><a href="{% url 'hearthstone' %}">Hearthstone</a></li>
                     <li><a href="/admin">Admin</a></li>
                     <li><a href="https://github.com/JanKlapetek?tab=repositories">Repositories GitHub</a></li>
                     <li><a href="#/contact/">Kontakt</a></li>
