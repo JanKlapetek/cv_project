@@ -32,4 +32,6 @@ def hearthstone_view(request):
     else:
         return render(request, "cv/hearthstone_view.html", {"cards": []})
 
+def kontakt_view(request):
+    return render(request, 'cv/kontakt_view.html')
     
