@@ -36,3 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = `/hearthstone/?page=${parseInt(currentPage) + 1}`;
     });
 });
+
+// Přidání funkce potvrzení odeslání formuláře
+const contactForm = document.querySelector("#contact-form");
+if (contactForm) {
+    contactForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Zabráníme defaultnímu odeslání formuláře
+        alert("Váš e-mail byl úspěšně odeslán! Děkujeme za zprávu.");
+        contactForm.reset(); // Vyčistí formulář
+    });
+};

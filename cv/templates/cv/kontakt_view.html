@@ -9,7 +9,8 @@
         <li><strong>Telefon:</strong> +420 734 500 506</li>
         <li><strong>Adresa:</strong> Opava, Česká republika</li>
     </ul>
-    <form method="post">
+    
+    <form id="contact-form" method="post">
         {% csrf_token %}
         <label for="name">Vaše jméno:</label>
         <input type="text" id="name" name="name" required>
