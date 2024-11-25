@@ -1,6 +1,8 @@
 {% extends 'cv/cv_view.html' %}
 
 {% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<button id="darkModeToggle">🌙</button>
 <div class="container">
     <h2>Kontakt</h2>
     <p>Máte-li dotaz nebo zájem o spolupráci, neváhejte mě kontaktovat pomocí následujících údajů:</p>
@@ -9,7 +11,7 @@
         <li><strong>Telefon:</strong> +420 734 500 506</li>
         <li><strong>Adresa:</strong> Opava, Česká republika</li>
     </ul>
-    
+
     <form id="contact-form" method="post">
         {% csrf_token %}
         <label for="name">Vaše jméno:</label>

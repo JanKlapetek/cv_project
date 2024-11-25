@@ -7,11 +7,12 @@
     <title>Jan Klapetek</title>
     <link rel="stylesheet" href="{% static 'cv/style.css' %}">
     <script src="{% static 'cv/script.js' %}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>O mně</h1>
+            <h1 class="animate__animated animate__flipInX">O mně</h1>
             <nav>
                 <ul>
                     <li><a href="/">Domů</a></li>
@@ -22,6 +23,7 @@
                     <li><a href="https://github.com/JanKlapetek?tab=repositories">Repositories GitHub</a></li>
                     <li><a href="{% url 'kontakt' %}">Kontakt</a></li>
                 </ul>
+                <button id="darkModeToggle">🌙</button>
             </nav>
         </header>
         <section id="education">

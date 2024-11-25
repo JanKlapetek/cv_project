@@ -143,3 +143,30 @@ form button {
 form button:hover {
     background-color: #64ff6c;
 }
+
+/* Tmavý režim */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+nav a.dark-mode {
+    color: #64ff6c;
+}
+#darkModeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #121212;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000; /* Aby bylo tlačítko nad ostatními prvky */
+}
+
+#darkModeToggle:hover {
+    background-color: #64ff6c;
+}

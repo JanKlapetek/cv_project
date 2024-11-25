@@ -46,3 +46,23 @@ if (contactForm) {
         contactForm.reset(); // Vyčistí formulář
     });
 };
+
+document.addEventListener("DOMContentLoaded", function() {
+    const darkModeToggle = document.getElementById("darkModeToggle");
+    const body = document.body;
+
+    darkModeToggle.addEventListener("click", function() {
+        body.classList.toggle("dark-mode");
+        // Uložíme stav režimu do localStorage, aby se režim uchoval i po obnovení stránky
+        if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            localStorage.setItem("darkMode", "disabled");
+        }
+    });
+
+    // Zkontrolujeme, jestli je režim již aktivní v localStorage při načítání stránky
+    if (localStorage.getItem("darkMode") === "enabled") {
+        body.classList.add("dark-mode");
+    }
+});
