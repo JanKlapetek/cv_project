@@ -147,7 +147,6 @@ form button:hover {
 /* Tmavý režim */
 body.dark-mode {
     background-color: #121212;
-    color: white;
 }
 
 nav a.dark-mode {
