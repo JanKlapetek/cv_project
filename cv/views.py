@@ -16,7 +16,7 @@ def kontakt_view(request):
             subject="Nová zpráva z kontaktního formuláře",
             message=full_message,
             from_email='tvůj-email@gmail.com',
-            recipient_list=['jan.klapetek@gmail.com'],  # E-mail příjemce
+            recipient_list=['info@honzii.cz'],  # E-mail příjemce
         )
         return HttpResponse("Email byl úspěšně odeslán.")
 
