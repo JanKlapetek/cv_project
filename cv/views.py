@@ -24,7 +24,7 @@ def kontakt_view(request):
 
 
 def cv_view(request):
-    return render(request, 'cv/cv_view.html')
+    return render(request, 'cv/index.html')
 
 def about_view(request):
     education = Education.objects.all()
